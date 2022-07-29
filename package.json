@@ -1,0 +1,29 @@
+{
+  "name": "WhatsApp-BOT",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "email-deep-validator": "^3.3.0",
+    "email-format-check": "^1.1.3",
+    "email-validator": "^2.0.4",
+    "encrypt_decrypt": "^1.0.0",
+    "moment": "^2.29.4",
+    "node-nmap": "^4.0.0",
+    "ouo.io": "^1.1.0",
+    "password-hash": "^1.2.2",
+    "qrcode-terminal": "^0.12.0",
+    "simsimi": "^3.0.0",
+    "urlencode": "^1.1.0",
+    "utf8": "^3.0.0",
+    "website-info": "^1.0.1",
+    "whatsapp-web.js": "^1.17.1"
+  }
+}
