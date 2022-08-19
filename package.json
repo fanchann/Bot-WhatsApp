@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ajax-request": "^1.2.3",
     "base-64": "^1.0.0",
     "email-deep-validator": "^3.3.0",
     "email-format-check": "^1.1.3",
