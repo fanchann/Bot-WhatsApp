@@ -3,16 +3,14 @@ const qr = (qr) => {
     // Generate and scan this code with your phone
     const show = qrcode.generate(qr, {
         small: true
+    }, function(qr) {
+        console.log(qr)
     });
-    console.log(show);
 };
 
 const ready = () => {
     console.log('Bot Siap!');
 }
-
-
-
 
 module.exports = {
     qr,
