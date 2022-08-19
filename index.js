@@ -18,64 +18,17 @@ client.on('ready', ready.ready);
 
 client.on('message', async (msg) => {
     if (msg.body.startsWith("!simi ")) {
-        setting.simiI
+        setting.simiI(msg)
     } else if (msg.body.startsWith("!help")) {
-        msg.reply(`
-        [+] !simi (insert text) => Start chat with simi
-        [+] !valid (email) => Check valid email
-        [+] !short (url) => Short url use ouo.io
-        [+] !encrypt (password) => Generate your secure password
-        [+] !decrypt (encrypted) => Decrypt your secure password`)
+        setting.help(msg)
     } else if (msg.body.startsWith("!valid ")) {
-        const check = msg.body.split("!valid ")[1];
-        if (validator(check)) {
-            msg.reply(`[+] ${check} Valid bang`)
-            console.log(`${msg.from} => ${check}`)
-        } else {
-            msg.reply(`[-] ${check} Yah gak valid`)
-        }
+        setting.validEmail(msg)
     } else if (msg.body.startsWith("!short")) {
-        const short = msg.body.split("!short ")[1];
-        try {
-            let url = shorten.short(short, (url) => {
-                console.log(`shorten => ${url}`)
-                msg.reply(`Url shorten => ${url}`)
-            });
-        } catch (err) {
-            if (err) {
-                msg.reply('Url mu salah bang')
-            }
-        }
+        setting.short(msg)
     } else if (msg.body.startsWith("!encrypt ")) {
-        const text = msg.body.split("!encrypt ")[1];
-        try {
-            let tent = utf8.encode(text);
-            let ecpt = pasHash.encode(text);
-            msg.reply(`
-        Password Encrypted !
-        From : ${text}
-        To : ${ecpt}`)
-        } catch (err) {
-            if (err) {
-                msg.reply('Yang bener lo')
-            }
-        }
+        setting.encrypt(msg)
     } else if (msg.body.startsWith("!decrypt ")) {
-        const text = msg.body.split("!decrypt ")[1]
-        try {
-            let tent = pasHash.decode(text);
-            let ecpt = utf8.decode(text);
-            msg.reply(`
-        Password decrypted !
-        From : ${text}
-        To : ${tent}`)
-
-        } catch (err) {
-            if (err) {
-                msg.reply('Cek lagi bang hasnya')
-            }
-        }
-
+        setting.decrypt(msg)
     }
 });
 client.initialize()
